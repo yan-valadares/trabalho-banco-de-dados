@@ -14,7 +14,7 @@ function createProjectCard(){
                     <h2 class="fw-bolder">Project Name 1</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam!</p>
                 </div>
-                <img class="img-fluid" src="${linkUnsplash}" alt="..." />
+                <img class="img-fluid" src="${linkUnsplash}" alt="Imagem do projeto de sciencias" />
             </div>
         </div>
     </div>

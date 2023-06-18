@@ -44,7 +44,19 @@
                         <div class="col-lg-11 col-xl-9 col-xxl-8 project-container">
                         <!-- Cards dos projetos criados dinâmicamente com js-->
                         </div>
-                    </div>
+                        <!-- Votação projeto -->
+                        <div class="col-lg-8 col-xl-6 align-items-center">
+                            <div class="text-center mb-5"><span class="text-gradient d-inline display-5 mb-0">Vote em um projeto</span></div>
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" type="text" placeholder="Escreva o nome do projeto que você achou mais interessante" data-sb-validations="required" />
+                                    <label for="name">Nome do projeto</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">Digite o nome do projeto</div>
+                                </div>
+                                <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar</button></div>
+                            </form>
+                        </div>
+                    </div> 
                 </div>
             </section>
             <!-- Call to action section-->

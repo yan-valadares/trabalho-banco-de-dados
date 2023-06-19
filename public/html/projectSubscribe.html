@@ -53,34 +53,34 @@
                                 <!-- To make this form functional, sign up at-->
                                 <!-- https://startbootstrap.com/solution/contact-forms-->
                                 <!-- to get an API token!-->
-                                <form id="contactForm">
+                                <form id="contactForm" action="/personSubscribe/post" method="post">
                                     <!-- Nome projeto input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="nome_projeto" id="name" type="text" placeholder="Escreva o nome do projeto" data-sb-validations="required" />
+                                        <input class="form-control" name="nome_projeto" id="name" type="text" placeholder="Escreva o nome do projeto" required />
                                         <label for="name">Nome projeto</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Seu projeto precisa de um nome!</div>
                                     </div>
                                     <!-- Tema projeto input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="tema" id="name" type="text" placeholder="Escreva o tema do seu projeto" data-sb-validations="required" />
+                                        <input class="form-control" name="tema" id="name" type="text" placeholder="Escreva o tema do seu projeto" required />
                                         <label for="name">Tema projeto</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Tema do projeto deve ser especificado</div>
                                     </div>
                                     <!-- Orientador input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="nome_orientador" id="name" type="text" placeholder="Primeiro nome do orientador" data-sb-validations="required" />
+                                        <input class="form-control" name="nome_orientador" id="name" type="text" placeholder="Primeiro nome do orientador" required />
                                         <label for="name">Nome orientador</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O projeto deve ter um orientador</div>
                                     </div>
                                     <!-- Categoria input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="nome_categoria" id="name" type="text" placeholder="Categoria" data-sb-validations="required" />
+                                        <input class="form-control" name="nome_categoria" id="name" type="text" placeholder="Categoria" required />
                                         <label for="name">Categoria</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A categoria do projeto deve ser especificada</div>
                                     </div>
                                     <!-- Descrição input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" name="descricao" id="message" type="text" placeholder="Descreva seu projeto" style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" name="descricao" id="message" type="text" placeholder="Descreva seu projeto" style="height: 10rem" required></textarea>
                                         <label for="message">Descrição</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">Descreva seu projeto</div>
                                     </div>

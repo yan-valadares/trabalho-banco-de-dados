@@ -28,8 +28,14 @@ routes.get("/projectWinner.html", (req, res) => {
 
 routes.post("/personSubscribe/post", async (req, res) => {
   
-    res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
     
+    res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
+})
+
+routes.post("/projectSubscribe/post", async (req, res) => {
+  
+    
+    res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
 })
 
 module.exports = routes;

@@ -39,15 +39,22 @@ routes.post("/personSubscribe/post", (req, res) => {
 })
 
 routes.post("/projectSubscribe/post", async (req, res) => {
-  
+    
+    const capitalize = str => {
+        if (typeof str !== 'string') {
+            return '';
+        }
+        return str.charAt(0).toUpperCase() + str.substr(1);
+    }
+
     const professorData = await Professor.findOne({
         where: {
-            nome_professor: req.body.nome_professor
+            nome_professor: capitalize(req.body.nome_professor)
         }
     })
     const categoriaData = await Categoria.findOne({
         where: {
-            nome_categoria: req.body.nome_categoria
+            nome_categoria: capitalize(req.body.nome_categoria)
         }
     })
 

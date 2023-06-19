@@ -53,39 +53,51 @@ routes.post("/personSubscribe/post", async (req, res) => {
         }
     })
 
-    await Aluno.create({
-        id: idAluno,
-        nome_aluno: capitalize(req.body.nome_aluno),
-        sobrenome_aluno: capitalize(req.body.sobrenome_aluno),
-        prontuario: req.body.prontuario,
-        data_nascimento: dataNascimento,
-        id_projeto: projetoData.id
-    })
+    if(projetoData != null){
 
-    await Responsavel.create({
-        id: idResponsavel,
-        nome_responsavel: capitalize(req.body.nome_responsavel),
-        sobrenome_responsavel: capitalize(req.body.sobrenome_responsavel),
-        uf_responsavel: req.body.uf_responsavel.toUpperCase(),
-        cidade_responsavel: capitalize(req.body.cidade_responsavel),
-        logradouro_responsavel: capitalize(req.body.logradouro_responsavel)
-    })
+        await Aluno.create({
+            id: idAluno,
+            nome_aluno: capitalize(req.body.nome_aluno),
+            sobrenome_aluno: capitalize(req.body.sobrenome_aluno),
+            prontuario: req.body.prontuario,
+            data_nascimento: dataNascimento,
+            id_projeto: projetoData.id
+        }).then(() => { console.log('Aluno criado com sucesso')})
+        .catch((err) => {console.log('Erro: ' + err) 
+        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
 
-    await TelefoneResponsavel.create({
-        id: randomUUID(),
-        telefone: req.body.telefone,
-        id_responsavel: idResponsavel
-    })
+        await Responsavel.create({
+            id: idResponsavel,
+            nome_responsavel: capitalize(req.body.nome_responsavel),
+            sobrenome_responsavel: capitalize(req.body.sobrenome_responsavel),
+            uf_responsavel: req.body.uf_responsavel.toUpperCase(),
+            cidade_responsavel: capitalize(req.body.cidade_responsavel),
+            logradouro_responsavel: capitalize(req.body.logradouro_responsavel)
+        }).then(() => { console.log('Responsável criado com sucesso')})
+        .catch((err) => {console.log('Erro: ' + err) 
+        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
 
-    await AlunoResponsavel.create({
-        id: randomUUID(),
-        id_aluno: idAluno,
-        id_responsavel: idResponsavel,
-        parentesco: capitalize(req.body.parentesco)
-    })
+        await TelefoneResponsavel.create({
+            id: randomUUID(),
+            telefone: req.body.telefone,
+            id_responsavel: idResponsavel
+        }).then(() => { console.log('Relação telefone responsável criada com sucesso')})
+        .catch((err) => {console.log('Erro: ' + err) 
+        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
 
-    
-    res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
+        await AlunoResponsavel.create({
+            id: randomUUID(),
+            id_aluno: idAluno,
+            id_responsavel: idResponsavel,
+            parentesco: capitalize(req.body.parentesco)
+        }).then(() => { console.log('Relação aluno responsável criada com sucesso')})
+        .catch((err) => {console.log('Erro: ' + err) 
+        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
+
+        res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
+
+    } else {res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")}
+
 })
 
 routes.post("/projectSubscribe/post", async (req, res) => {

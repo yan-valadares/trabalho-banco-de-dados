@@ -51,21 +51,22 @@ routes.post("/projectSubscribe/post", async (req, res) => {
         }
     })
 
-    await Projeto.create({
-        id: randomUUID(),
-        nome_projeto: req.body.nome_projeto,
-        tema_projeto: req.body.tema_projeto,
-        descricao: req.body.descricao,
-        id_professor: professorData.id,
-        id_categoria: categoriaData.id
-    }).then(() => {
-        console.log('Projeto criado com sucesso')
-        res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
-    }).catch((err) => {
-        console.log('erro: ' + err)
-        res.send('Erro')
-    })
-
+    if(categoriaData != null && professorData != null){
+        await Projeto.create({
+            id: randomUUID(),
+            nome_projeto: req.body.nome_projeto,
+            tema_projeto: req.body.tema_projeto,
+            descricao: req.body.descricao,
+            id_professor: professorData.id,
+            id_categoria: categoriaData.id
+        }).then(() => {
+            console.log('Projeto criado com sucesso')
+            res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
+        }).catch((err) => {
+            console.log('erro: ' + err)
+            res.send('Erro')
+        })
+    } else { res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")}
     
 })
 

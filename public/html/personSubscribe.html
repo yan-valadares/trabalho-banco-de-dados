@@ -56,75 +56,63 @@
                                 <form id="contactForm" action="/personSubscribe/post" method="post">
                                     <!-- Nome projeto input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome do projeto" required />
+                                        <input class="form-control" name="nome_projeto" id="name" type="text" placeholder="Escreva o nome do projeto" required />
                                         <label for="name">Nome projeto</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">O nome do projeto que você participará deve ser informado</div>
                                     </div>
                                     <!-- Nome pessoa input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva seu nome" required />
+                                        <input class="form-control" name="nome_aluno" id="name" type="text" placeholder="Escreva seu nome" required />
                                         <label for="name">Nome</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">O seu nome deve ser informado</div>
                                     </div>
                                     <!-- Sobrenome pessoa input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva seu sobrenome" required />
+                                        <input class="form-control" name="sobrenome_aluno" id="name" type="text" placeholder="Escreva seu sobrenome" required />
                                         <label for="name">Sobrenome</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Apenas um sobrenome</div>
                                     </div>
                                     <!-- Prontuário input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Prontuário" required />
+                                        <input class="form-control" name="Prontuario" id="name" type="text" placeholder="Prontuário" required />
                                         <label for="name">Prontuário</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Seu prontuário deve ser informado</div>
                                     </div>
                                     <!-- Data nascimento input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="date" placeholder="Data de nascimento" required />
+                                        <input class="form-control" name="data_nascimento" id="name" type="date" placeholder="Data de nascimento" required />
                                         <label for="name">Data de nascimento</label>
-                                        <div class="invalid-feedback" data-sb-feedback="date:required">Sua data de nascimento deve ser informada</div>
                                     </div>
                                     <!-- Nome responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome do seu responsável" required />
+                                        <input class="form-control" name="nome_responsavel" id="name" type="text" placeholder="Escreva o nome do seu responsável" required />
                                         <label for="name">Nome do responsável</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">O nome do seu responsável deve ser informado</div>
                                     </div>
                                     <!-- Sobrenome responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o sobrenome do seu responsável" required />
+                                        <input class="form-control" name="sobrenome_responsavel" id="name" type="text" placeholder="Escreva o sobrenome do seu responsável" required />
                                         <label for="name">Sobrenome do  responsável</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">Apenas o sobrenome do seu responsávele</div>
                                     </div>
                                     <!-- Parentesco responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o grau de parentesco" required />
+                                        <input class="form-control" name="parentesco" id="name" type="text" placeholder="Escreva o grau de parentesco" required />
                                         <label for="name">Grau de parentesco</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">O grau de parentesco deve ser informado</div>
                                     </div>
                                     <!-- Cidade responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva a cidade onde mora" required />
+                                        <input class="form-control" name="cidade-responsavel" id="name" type="text" placeholder="Escreva a cidade onde mora" required />
                                         <label for="name">Cidade</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">A cidade de residência deve ser informado</div>
                                     </div>
                                     <!-- Logradouro responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome da rua" required />
-                                        <label for="name">Logradouro</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">O nome da rua em que você mora deve ser informado</div>
+                                        <input class="form-control" name="logradouro_responsavel" id="name" type="text" placeholder="Escreva o nome da rua" required />
+                                        <label for="name">Logradouro</label>                                     
                                     </div>
                                     <!-- UF responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome da rua" required maxlength="2" minlength="2"/>
+                                        <input class="form-control" name="uf_responsavel" id="name" type="text" placeholder="Escreva o nome da rua" required maxlength="2" minlength="2"/>
                                         <label for="name">UF</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">O estado em que você mora deve ser informado</div>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(xx) xxxxx-xxxx" required />
+                                        <input class="form-control" name="telefone" id="phone" type="tel" placeholder="(xx) xxxxx-xxxx" required />
                                         <label for="phone">Telefone</label>
-                                        <div class="invalid-feedback" data-sb-feedback="phone:required">Um telefone para contato deve ser informado</div>
                                     </div>
                                     <!-- Submit success message-->
                                     <!---->

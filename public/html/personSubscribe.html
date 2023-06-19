@@ -42,7 +42,7 @@
                         <div class="text-center mb-5">
                             <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                             <h1 class="fw-bolder">Inscreva-se em um projeto</h1>
-                            <p class="lead fw-normal text-muted mb-0">Seu conhecimento agregará muito!</p>
+                            <p class="lead fw-normal text-muted mb-0">Junte seu conhecimento com o de outros alunos!</p>
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
@@ -53,76 +53,76 @@
                                 <!-- To make this form functional, sign up at-->
                                 <!-- https://startbootstrap.com/solution/contact-forms-->
                                 <!-- to get an API token!-->
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form id="contactForm" action="/personSubscribe/post" method="post">
                                     <!-- Nome projeto input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome do projeto" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome do projeto" required />
                                         <label for="name">Nome projeto</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O nome do projeto que você participará deve ser informado</div>
                                     </div>
                                     <!-- Nome pessoa input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva seu nome" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva seu nome" required />
                                         <label for="name">Nome</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O seu nome deve ser informado</div>
                                     </div>
                                     <!-- Sobrenome pessoa input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva seu sobrenome" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva seu sobrenome" required />
                                         <label for="name">Sobrenome</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Apenas um sobrenome</div>
                                     </div>
                                     <!-- Prontuário input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Prontuário" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Prontuário" required />
                                         <label for="name">Prontuário</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Seu prontuário deve ser informado</div>
                                     </div>
                                     <!-- Data nascimento input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="date" placeholder="Data de nascimento" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="date" placeholder="Data de nascimento" required />
                                         <label for="name">Data de nascimento</label>
                                         <div class="invalid-feedback" data-sb-feedback="date:required">Sua data de nascimento deve ser informada</div>
                                     </div>
                                     <!-- Nome responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome do seu responsável" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome do seu responsável" required />
                                         <label for="name">Nome do responsável</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O nome do seu responsável deve ser informado</div>
                                     </div>
                                     <!-- Sobrenome responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o sobrenome do seu responsável" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva o sobrenome do seu responsável" required />
                                         <label for="name">Sobrenome do  responsável</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">Apenas o sobrenome do seu responsávele</div>
                                     </div>
                                     <!-- Parentesco responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o grau de parentesco" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva o grau de parentesco" required />
                                         <label for="name">Grau de parentesco</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O grau de parentesco deve ser informado</div>
                                     </div>
                                     <!-- Cidade responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva a cidade onde mora" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva a cidade onde mora" required />
                                         <label for="name">Cidade</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A cidade de residência deve ser informado</div>
                                     </div>
                                     <!-- Logradouro responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome da rua" data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome da rua" required />
                                         <label for="name">Logradouro</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O nome da rua em que você mora deve ser informado</div>
                                     </div>
                                     <!-- UF responsável input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome da rua" data-sb-validations="required" maxlength="2" minlength="2"/>
+                                        <input class="form-control" id="name" type="text" placeholder="Escreva o nome da rua" required maxlength="2" minlength="2"/>
                                         <label for="name">UF</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O estado em que você mora deve ser informado</div>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(xx) xxxxx-xxxx" data-sb-validations="required" />
+                                        <input class="form-control" id="phone" type="tel" placeholder="(xx) xxxxx-xxxx" required />
                                         <label for="phone">Telefone</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">Um telefone para contato deve ser informado</div>
                                     </div>
@@ -141,7 +141,7 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Inscrição falhou!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar</button></div>
                                 </form>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <!-- <script src="js/scripts.js"></script> -->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

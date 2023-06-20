@@ -4,7 +4,7 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
 */
 const url = 'http://localhost:8080/selectProjects'
-const linkUnsplash = 'https://source.unsplash.com/300x400/?science'
+const linkUnsplash = 'https://source.unsplash.com/300x400/?'
 const pagina = document.querySelector('.project-container')
 
 async function consultaProjetos(){
@@ -28,14 +28,14 @@ async function consultaProjetos(){
 
 function createProjectCard(nomeProjeto, descricaoProjeto){
     return `
-    <div class="card rounded-4 border-0 mb-5">
+    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
         <div class="card-body p-0">
             <div class="d-flex align-items-center">
                 <div class="p-5">
                     <h2 class="fw-bolder">${nomeProjeto}</h2>
                     <p>${descricaoProjeto}</p>
                 </div>
-                <img class="img-fluid" src="${linkUnsplash}" alt="Imagem do projeto de sciencias" />
+                <img class="img-fluid" src="${linkUnsplash}${nomeProjeto}" alt="Imagem do projeto de sciencias" />
             </div>
         </div>
     </div>

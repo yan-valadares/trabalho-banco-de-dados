@@ -51,6 +51,4 @@ Professor.hasMany(Projeto, {
     allowNull: false
 })
 
-
-
 module.exports = Projeto;

@@ -18,8 +18,9 @@ async function consultaProjetos(){
                 console.log('nome projeto: ' + nomeProjeto)
                 console.log('descricao projeto: ' + nomeProjeto)
                 console.log(pagina)
-                pagina.innerHTML = createProjectCard(nomeProjeto, descricaoProjeto)
-                
+                let z = document.createElement('div')
+                z.innerHTML = createProjectCard(nomeProjeto, descricaoProjeto)
+                pagina.appendChild(z)
             }
         })
         .catch(error => console.error(error))
@@ -27,7 +28,7 @@ async function consultaProjetos(){
 
 function createProjectCard(nomeProjeto, descricaoProjeto){
     return `
-    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+    <div class="card rounded-4 border-0 mb-5">
         <div class="card-body p-0">
             <div class="d-flex align-items-center">
                 <div class="p-5">
@@ -40,9 +41,4 @@ function createProjectCard(nomeProjeto, descricaoProjeto){
     </div>
     `
 }
-
-
-
-
 consultaProjetos();
-

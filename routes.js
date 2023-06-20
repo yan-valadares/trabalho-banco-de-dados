@@ -101,7 +101,6 @@ routes.post("/personSubscribe/post", async (req, res) => {
 })
 
 routes.post("/projectSubscribe/post", async (req, res) => {
-    
     const capitalize = str => {
         if (typeof str !== 'string') {
             return '';

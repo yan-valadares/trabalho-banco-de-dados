@@ -22,6 +22,3 @@ function createProjectCard(){
 }
 
 document.querySelector('.project-container').innerHTML = createProjectCard()
-
-
-

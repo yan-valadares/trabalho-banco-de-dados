@@ -139,4 +139,12 @@ routes.post("/projectSubscribe/post", async (req, res) => {
     
 })
 
+routes.get('/selectProjects', async (req, res) => {
+
+    const projects  = await Projeto.findAll()
+
+    res.send(projects)
+
+})
+
 module.exports = routes;

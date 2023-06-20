@@ -3,16 +3,36 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
 */
+const url = 'http://localhost:8080/selectProjects'
 const linkUnsplash = 'https://source.unsplash.com/300x400/?science'
+const pagina = document.querySelector('.project-container')
 
-function createProjectCard(){
+async function consultaProjetos(){
+
+    const consulta = await fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                let nomeProjeto = data[i].nome_projeto
+                let descricaoProjeto = data[i].descricao
+                console.log('nome projeto: ' + nomeProjeto)
+                console.log('descricao projeto: ' + nomeProjeto)
+                console.log(pagina)
+                pagina.innerHTML = createProjectCard(nomeProjeto, descricaoProjeto)
+                
+            }
+        })
+        .catch(error => console.error(error))
+}   
+
+function createProjectCard(nomeProjeto, descricaoProjeto){
     return `
     <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
         <div class="card-body p-0">
             <div class="d-flex align-items-center">
                 <div class="p-5">
-                    <h2 class="fw-bolder">Project Name 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam!</p>
+                    <h2 class="fw-bolder">${nomeProjeto}</h2>
+                    <p>${descricaoProjeto}</p>
                 </div>
                 <img class="img-fluid" src="${linkUnsplash}" alt="Imagem do projeto de sciencias" />
             </div>
@@ -21,5 +41,8 @@ function createProjectCard(){
     `
 }
 
-document.querySelector('.project-container').innerHTML = createProjectCard()
+
+
+
+consultaProjetos();
 

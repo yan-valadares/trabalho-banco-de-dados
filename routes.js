@@ -138,6 +138,10 @@ routes.post("/projectSubscribe/post", async (req, res) => {
     
 })
 
+routes.post("/projectsVote/post", async (req, res) => {
+    res.sendFile(__dirname + "/public/html/projectsAfterVote.html")
+})
+
 routes.get('/selectProjects', async (req, res) => {
 
     const projects  = await Projeto.findAll()

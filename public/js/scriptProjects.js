@@ -18,9 +18,9 @@ async function consultaProjetos(){
                 console.log('nome projeto: ' + nomeProjeto)
                 console.log('descricao projeto: ' + nomeProjeto)
                 console.log(pagina)
-                let z = document.createElement('div')
-                z.innerHTML = createProjectCard(nomeProjeto, descricaoProjeto)
-                pagina.appendChild(z)
+                let projectCard = document.createElement('div')
+                projectCard.innerHTML = createProjectCard(nomeProjeto, descricaoProjeto)
+                pagina.appendChild(projectCard)
             }
         })
         .catch(error => console.error(error))

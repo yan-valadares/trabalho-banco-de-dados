@@ -64,7 +64,7 @@ routes.post("/personSubscribe/post", async (req, res) => {
             id_projeto: projetoData.id
         }).then(() => { console.log('Aluno criado com sucesso')})
         .catch((err) => {console.log('Erro: ' + err) 
-        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
+        res.sendFile(__dirname + "/public/html/somethingWentWrong.html")})
 
         await Responsavel.create({
             id: idResponsavel,
@@ -75,7 +75,7 @@ routes.post("/personSubscribe/post", async (req, res) => {
             logradouro_responsavel: capitalize(req.body.logradouro_responsavel)
         }).then(() => { console.log('Responsável criado com sucesso')})
         .catch((err) => {console.log('Erro: ' + err) 
-        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
+        res.sendFile(__dirname + "/public/html/somethingWentWrong.html")})
 
         await TelefoneResponsavel.create({
             id: randomUUID(),
@@ -83,7 +83,7 @@ routes.post("/personSubscribe/post", async (req, res) => {
             id_responsavel: idResponsavel
         }).then(() => { console.log('Relação telefone responsável criada com sucesso')})
         .catch((err) => {console.log('Erro: ' + err) 
-        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
+        res.sendFile(__dirname + "/public/html/somethingWentWrong.html")})
 
         await AlunoResponsavel.create({
             id: randomUUID(),
@@ -92,11 +92,11 @@ routes.post("/personSubscribe/post", async (req, res) => {
             parentesco: capitalize(req.body.parentesco)
         }).then(() => { console.log('Relação aluno responsável criada com sucesso')})
         .catch((err) => {console.log('Erro: ' + err) 
-        res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")})
+        res.sendFile(__dirname + "/public/html/somethingWentWrong.html")})
 
         res.sendFile(__dirname + "/public/html/subscribeConfirmation.html")
 
-    } else {res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")}
+    } else {res.sendFile(__dirname + "/public/html/somethingWentWrong.html")}
 
 })
 
@@ -134,12 +134,35 @@ routes.post("/projectSubscribe/post", async (req, res) => {
             console.log('erro: ' + err)
             res.send('Erro')
         })
-    } else { res.sendFile(__dirname + "/public/html/subscribeUnautherized.html")}
+    } else { res.sendFile(__dirname + "/public/html/somethingWentWrong.html")}
     
 })
 
 routes.post("/projectsVote/post", async (req, res) => {
-    res.sendFile(__dirname + "/public/html/projectsAfterVote.html")
+    
+    const capitalize = str => {
+        if (typeof str !== 'string') {
+            return '';
+        }
+        return str.charAt(0).toUpperCase() + str.substr(1);
+    }
+
+    const projetoData = await Projeto.findOne({
+        where: {
+            nome_projeto: capitalize(req.body.nome_projeto)
+        }
+    })
+    
+    if(projetoData != null){
+        votos = projetoData.votos + 1
+
+        projetoData.votos = votos
+        projetoData.save()
+    
+        console.log(projetoData)
+        res.sendFile(__dirname + "/public/html/projectsAfterVote.html")
+    } else { res.sendFile(__dirname + "/public/html/somethingWentWrong.html")}
+    
 })
 
 routes.get('/selectProjects', async (req, res) => {

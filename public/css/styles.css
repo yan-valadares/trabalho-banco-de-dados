@@ -600,7 +600,7 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
-  margin-left: 10rem;
+  margin-left: 12rem;
 }
 
 .img-thumbnail {
@@ -11732,4 +11732,8 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+}
+
+.container-project-information{
+  gap: 5rem;
 }

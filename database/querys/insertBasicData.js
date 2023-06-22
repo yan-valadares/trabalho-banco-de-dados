@@ -1,13 +1,13 @@
-const { randomUUID } = require('crypto');
 const database = require('../dbConnection');
 const Professor = require('../models/ModeloProfessor')
 const Categoria = require('../models/ModeloCategoria')
+const { randomUUID } = require('crypto');
 
-async function createDatabase(){
-    
+async function insertBasicData(){
+
     await database.sync()
-    
-    const novoProfessor1 = Professor.create({
+
+    Professor.create({
         id: randomUUID(),
         nome_professor: 'Yan',
         sobrenome_professor: 'Valadares',
@@ -16,7 +16,7 @@ async function createDatabase(){
         especializacao: 'Biologia'
     });
     
-    const novoProfessor2 = Professor.create({
+    Professor.create({
         id: randomUUID(),
         nome_professor: 'Lucas',
         sobrenome_professor: 'Carmassi',
@@ -25,7 +25,7 @@ async function createDatabase(){
         especializacao: 'Química'
     });
 
-    const novoProfessor3 = Professor.create({
+    Professor.create({
         id: randomUUID(),
         nome_professor: 'Letícia',
         sobrenome_professor: 'Ribeiro',
@@ -35,26 +35,23 @@ async function createDatabase(){
     });
 
 
-    const novaCategoria1 = Categoria.create({
+    Categoria.create({
         id: randomUUID(),
         nome_categoria: 'Biologia',
-        descricao: 'Ciência da natureza'
+        descricao: 'Ciência da vida'
     });
 
-    const novaCategoria2 = Categoria.create({
+    Categoria.create({
         id: randomUUID(),
         nome_categoria: 'Química',
-        descricao: 'Ciência das coisas'
+        descricao: 'Ciência da matéria e suas propriedades'
     });
 
-    const novaCategoria3 = Categoria.create({
+    Categoria.create({
         id: randomUUID(),
         nome_categoria: 'Física',
-        descricao: 'Ciência do universo'
+        descricao: 'Ciência dos fenômenos naturais'
     });
+}
 
-    Professor.findAll();
-
-}   
-
-createDatabase()
+insertBasicData();

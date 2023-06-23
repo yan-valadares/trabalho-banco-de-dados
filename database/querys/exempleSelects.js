@@ -9,11 +9,10 @@ async function databaseSelect(){
     await database.sync()
 
     // const professores = await Professor.findAll();
-    // console.log(professores)
-    
+    // professores.forEach(p => console.log(p.dataValues))  
 
     // const categorias = await Categoria.findAll();
-    // console.log(categorias)
+    // categorias.forEach(c => console.log(c.dataValues))
 
     // const professor = await Professor.findOne({
     //     where: {
